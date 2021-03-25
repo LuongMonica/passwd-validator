@@ -16,17 +16,17 @@ if len(prompt) > 10:
     print("Error! Password must be at least 5 characters long.")
     while len(prompt) < 5:
       prompt = str(input("Enter a valid password. Password must be 5-10 characters long with at least 1 number and 1 special character (such &, +, @, $, #, %, etc.) No spaces are allowed."))
-    if num == False:
+    if num_check(prompt) == False:
       print("Error! Password must include at least 1 number.")
-      while num == False:
+      while num_check(prompt) == False:
         prompt = str(input("Enter a valid password. Password must be 5-10 characters long with at least 1 number and 1 special character (such &, +, @, $, #, %, etc.) No spaces are allowed."))
-      if spec == False:
+      if spec_check(prompt) == False:
         print("Error! Password must include at least 1 special character.")
-        while spec == False:
+        while spec_check(prompt) == False:
           prompt = str(input("Enter a valid password. Password must be 5-10 characters long with at least 1 number and 1 special character (such &, +, @, $, #, %, etc.) No spaces are allowed."))
-        if space == False:
+        if spec_check(prompt) == False:
           print("Error! Password must not contain whitespaces.")
-          while space == False:
+          while spec_check(prompt) == False:
             prompt = str(input("Enter a valid password. Password must be 5-10 characters long with at least 1 number and 1 special character (such &, +, @, $, #, %, etc.) No spaces are allowed."))
 else:
   print("Password validated.")
